@@ -1,0 +1,29 @@
+{% extends 'aplicacion/base.html' %} 
+{% load static %}
+{% block titulo %}
+    Pagina de Estudiantes
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>{{titulo|capfirst}} - {% now "d / m / Y " %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Nombre </th>
+                <th> Apellido </th>
+                <th> Email </th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for a in estudiantes %}
+            <tr>
+                <td>{{ a.nombre }} </td>
+                <td>{{ a.apellido }} </td>
+                <td>{{ a.email }} </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+        </table>
+
+{% endblock contenido %}

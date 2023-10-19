@@ -1,0 +1,29 @@
+{% extends 'aplicacion/base.html' %} 
+{% load static %}
+{% block titulo %}
+    Pagina de Entregables
+{% endblock titulo %}
+
+{% block contenido %}
+    <h1>Entregables  - {% now "d / m / Y " %}</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th> Nombre de Entrega </th>
+                <th> Fecha de Entrega </th>
+                <th> Entregado </th>
+            </tr>
+        </thead>
+        <tbody>
+    {% for e in entregables %}
+            <tr>
+                <td>{{ e.nombre }} </td>
+                <td>{{ e.fechaEntrega }} </td>
+                <td>{{ e.entregado }} </td>
+            </tr>
+    {% endfor %}
+        </tbody>
+        </table>
+
+{% endblock contenido %}
